@@ -3,6 +3,7 @@ require 'player'
 describe 'Player' do 
 
   subject { Player.new("Andrew") }
+  let(:player2) { Player.new("Ben") }
 
   it "should initialise with a given name, and return it to the user when name is called" do
     expect(subject.name).to eq("Andrew")
@@ -10,5 +11,11 @@ describe 'Player' do
 
   it "should initialize with 100 HP, and return it to the user when hp is called" do 
     expect(subject.hp).to eq(100)
+  end
+
+  describe '#attack' do 
+    it "should accept a player as an argument and reduce HP by 10" do
+      expect{ subject.attack(player2) }.to change { player2.hp }.by (-10)
+    end
   end
 end
