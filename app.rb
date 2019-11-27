@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
+
 
 class Battle < Sinatra::Base
 
@@ -16,6 +18,7 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do 
+    @game = Game.new
     @player_1 = session[:player_1].name
     @player_2 = session[:player_2].name
     erb(:play)
@@ -24,8 +27,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @player_1 = session[:player_1].name
     @player_2 = session[:player_2].name
-    session[:player_1].attack(session[:player_2])
-
+    @game.attack(@player_2)
     @player_1_hp = session[:player_1].hp
     @player_2_hp = session[:player_2].hp
     erb(:attack)

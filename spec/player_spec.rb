@@ -13,9 +13,12 @@ describe 'Player' do
     expect(subject.hp).to eq(60)
   end
 
-  describe '#attack' do 
-    it "should accept a player as an argument and reduce HP by 10" do
-      expect{ subject.attack(player2) }.to change { player2.hp }.by (-10)
-    end
+  
+
+  describe '#receive_damage' do
+  it "should reduce the player's HP by 10 when attacked" do
+    expect{ subject.attack(player2) }.to change { player2.hp }.by (-10)
   end
+end
+
 end
