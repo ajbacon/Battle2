@@ -18,7 +18,7 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do 
-    @game = Game.new
+    session[:game] = Game.new
     @player_1 = session[:player_1].name
     @player_2 = session[:player_2].name
     erb(:play)
@@ -27,7 +27,7 @@ class Battle < Sinatra::Base
   get '/attack' do
     @player_1 = session[:player_1].name
     @player_2 = session[:player_2].name
-    @game.attack(@player_2)
+    session[:game].attack(session[:player_2])
     @player_1_hp = session[:player_1].hp
     @player_2_hp = session[:player_2].hp
     erb(:attack)
