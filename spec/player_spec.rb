@@ -9,8 +9,8 @@ describe 'Player' do
     expect(subject.name).to eq("Andrew")
   end
 
-  it "should initialize with 100 HP, and return it to the user when hp is called" do 
-    expect(subject.hp).to eq(100)
+  it "should initialize with 60 HP, and return it to the user when hp is called" do 
+    expect(subject.hp).to eq(60)
   end
 
   describe '#attack' do 

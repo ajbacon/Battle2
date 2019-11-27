@@ -5,5 +5,9 @@ feature 'Attack' do
     click_button 'Attack'
     expect(page).to have_content "Ben attacks Andrew!"
     expect(page).to have_content "Andrew: Bitch!"
+    expect(page).to have_content "Andrew: 50/60"
   end
+
+
+
 end 
