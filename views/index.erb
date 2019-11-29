@@ -11,16 +11,12 @@
 <body>
   <h1>Battle!</h1>
   <h2>Sign in to play</h2>
-  <form action='/names' method='post'>
-    <div>
-      Player 1 Name
-      <input class='new-name' type='text' name ='player_1'>
-    </div>
-    <div>
-      Player 2 Name
-      <input class='new-name' type='text' name ='player_2'>
-    </div>
-    <div><input type='submit' value ='Submit' class='begin-game'></div>
-  </form>
+  <div class="player-entry">
+    <form action='/names' method='post'>
+        <input class='new-name' type='text' name ='player_1' placeholder="Enter Player One Name">
+        <input class='new-name' type='text' name ='player_2' placeholder="Enter Player Two Name">
+      <div class="play-button"><div class="actual-button"><input type='submit' value ='Submit' class='begin-game'></div></div>
+    </form>
+  </div>
 </body>
 </html>
