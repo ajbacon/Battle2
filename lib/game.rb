@@ -19,4 +19,14 @@ class Game
     # parallel assigment
     @current, @opponent = @opponent, @current
   end
+
+  def winner
+    if @player1.hp == 0
+      return @player2
+    elsif @player2.hp == 0
+      return @player1
+    end
+    false
+  end
 end 
+

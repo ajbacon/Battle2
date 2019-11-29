@@ -34,4 +34,13 @@ describe 'Game' do
       expect(game.current).to eq(player2)
     end
   end
+
+  describe '#winner' do
+    it "returns the player that wins" do
+      allow(player1).to receive(:hp).and_return(10)
+      allow(player2).to receive(:hp).and_return(0)
+      expect(game.winner).to eq(player1)
+    end
+  end
+  
 end

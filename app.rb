@@ -27,10 +27,16 @@ class Battle < Sinatra::Base
     @game = session[:game]
     @game.attack(@game.opponent)
     @game.switch_turn
-    
+    redirect '/winner' if @game.winner
 
     erb(:attack)
   end 
+
+  get '/winner' do
+    @game = session[:game]
+    @winner = @game.winner
+    erb :win_page
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
