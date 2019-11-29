@@ -1,10 +1,9 @@
-  <h2>Welcome <%=@player_1%> and <%=@player_2%>!</h2>
-
+<h2>Commence Battle!! <%=@game.player1.name%> - vs - <%=@game.player2.name%>!</h2>
 <body>
-<%=@player_1%>: 60/60 HP
-<br>
-<%=@player_2%>: 60/60 HP
-<form action='/attack' method='get'>
-<div><input type='submit' value ='Attack'></div>
-</form>
+  <p><%=@game.player1.name%>: <%=@game.player1.hp%>/60 HP</p>
+  <p><%=@game.player2.name%>: <%=@game.player2.hp%>/60 HP</p>
+  <p><%=@game.current.name%>'s turn</p>
+  <form action='/attack' method='get'>
+  <div><input type='submit' value ='Attack'></div>
+  </form>
 </body>

@@ -1,15 +1,15 @@
-  <h2>Welcome <%=@player_1%> and <%=@player_2%>!</h2>
+<h2>Commence Battle!! <%=@game.player1.name%> - vs - <%=@game.player2.name%>!</h2>
 
 <body>
-<%=@player_1%>: <%=@player_1_hp%>/60 HP
-<br>
-<%=@player_2%>: <%=@player_2_hp%>/60 HP
-<br>
-<br>
-Action: <%=@player_1%> attacks <%=@player_2%>!
-<br>
-Response: <%=@player_2%>: Bitch!
-<form action='/attack' method='get'>
-<div><input type='submit' value ='Attack'></div>
-</form>
+  <p><%=@game.player1.name%>: <%=@game.player1.hp%>/60 HP</p>
+  <p><%=@game.player2.name%>: <%=@game.player2.hp%>/60 HP</p>
+    <form action='/play' method='get'>
+    <div><input type='submit' value ='OK'></div>
+  </form>
+  <p>
+    Action: <%=@game.opponent.name%> attacks <%=@game.current.name%>!
+    <br>
+    Response: <%=@game.current.name%>: Bitch!
+  </p>
+
 </body>
