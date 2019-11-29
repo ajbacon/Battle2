@@ -1,7 +1,26 @@
-<h1>Battle!</h1>
-<h2>Sign in to play</h2>
-<form action='/names' method='post'>
-  <div>Player 1 Name<input type='text' name ='player_1'></div>
-  <div>Player 2 Name<input type='text' name ='player_2'></div>
-  <div><input type='submit' value ='Submit'></div>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/index.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Battle!</h1>
+  <h2>Sign in to play</h2>
+  <form action='/names' method='post'>
+    <div>
+      Player 1 Name
+      <input class='new-name' type='text' name ='player_1'>
+    </div>
+    <div>
+      Player 2 Name
+      <input class='new-name' type='text' name ='player_2'>
+    </div>
+    <div><input type='submit' value ='Submit' class='begin-game'></div>
+  </form>
+</body>
+</html>
